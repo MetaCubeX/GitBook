@@ -80,7 +80,7 @@ listen: 0.0.0.0:1053
 
 ### IPV6
 
-可选值 `true/false`&#x20;
+可选值 `true/false`
 
 是否解析IPV6,如为false,则回应AAAA的空解析
 
@@ -144,13 +144,19 @@ default-nameserver:
 
 ### nameserver-policy
 
-指定域名查询的解析服务器,可使用 geosite,优先于`nameserver/fallback`
+指定域名查询的解析服务器,可使用 geosite,优先于`nameserver/fallback 查询`
+
+`可书写多个,并发查询,以下仅作为书写演示`
 
 ```
 nameserver-policy:
   'www.baidu.com': '114.114.114.114'
   '+.internal.crop.com': '10.0.0.1'
   'geosite:cn': https://doh.pub/dns-query
+  'geosite:geolocation-!cn': [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
+  'geosite:gfw':
+  - tls://8.8.4.4
+  - tls://1.0.0.1
 ```
 
 ### nameserver
