@@ -16,8 +16,6 @@ coverY: 0
 > * 本 Wiki 基于最新的 [**Meta Alpha**](https://github.com/MetaCubeX/Clash.Meta/tree/Alpha) 分支介绍，如果您的 Meta 低于此版本，可能会有部分功能不支持；
 > * Meta 核心支持所有原开源核心的全部特性，支持原 Clash Premium 核心部分特性。
 
-##
-
 ### <mark style="color:blue;">Clash.Meta 主要特性：</mark>
 
 #### **代理模块：**
