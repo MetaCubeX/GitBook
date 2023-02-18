@@ -135,7 +135,7 @@ listeners:
 ```
 
 {% hint style="info" %}
-* proxy 如果不为空则直接将该入站流量交由指定proxy处理
+* proxy 如果不为空则直接将该入站流量交由指定[proxy](proxy/)处理
 * rule 默认使用 rules，如果未找到 [sub-rule](rule/other.md) 则直接使用 rules
 {% endhint %}
 
