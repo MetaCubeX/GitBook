@@ -19,7 +19,7 @@
 * [代理配置](function/proxy/README.md)
   * [Vless节点支持](function/proxy/vless.md)
   * [Hysteria节点支持](function/proxy/hysteria.md)
-  * [Tuic 节点支持](function/proxy/tuic.md)
+  * [Tuic 节点支持](function/proxy/tuic-jie-dian-zhi-chi.md)
   * [Wireguard节点支持](function/proxy/wireguard.md)
   * [Http Headers支持](function/proxy/http.md)
   * [Provider功能扩展](function/proxy/provider.md)
