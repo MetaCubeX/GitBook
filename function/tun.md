@@ -8,7 +8,6 @@ coverY: 0
 ```yaml
 tun:
   enable: true
-  device: meta              #MacOS建议删除此项
   stack: system             #system / gvisor / lwip liwp仅为1.13.2以上的功能
   dns-hijack:
     - 'any:53'
@@ -22,6 +21,7 @@ tun:
   inet6_route_address:      #启用 auto_route 时使用自定义路由而不是默认路由
     - '::/1'
     - '8000::/1'
+  # device: meta              #默认无需设置，MacOS务必不配置此项
   # endpoint_independent_nat: false         #启用独立于端点的 NAT
   # include_uid: # UID 规则仅在 Linux 下被支持，并且需要 auto_route
     # - 0
