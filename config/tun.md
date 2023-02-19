@@ -56,7 +56,7 @@ tun模式堆栈,可选system/gvisor/lwip,如无使用问题,只建议使用`syst
 
 system栈使用系统堆栈,可以提供更稳定/全面的tun体验,且占用相对其他堆栈更低
 
-gvsior
+gvisor
 
 lwip
 {% endhint %}
