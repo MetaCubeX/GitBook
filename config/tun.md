@@ -9,10 +9,10 @@ description: 配置clash的tun模式
 <pre><code>tun:
   enable: true
   stack: system
-  dns-hijack:
-  - any:53
   auto-detect-interface: true
   auto-route: true
+  dns-hijack:
+  - any:53
   # mtu: 9000
   # strict_route: true
   # inet4_route_address:
@@ -79,4 +79,20 @@ auto-route: true
 
 ```
 auto-detect-interface: true
+```
+
+### dns-hijack
+
+dns劫持,一般设置为 `any:53` 即可,即劫持所有53端口的udp流量
+
+{% hint style="warning" %}
+MACOS    无法自动劫持发往局域网的 dns 请求
+
+ANDROID 如开启私人dns则无法自动劫持dns
+{% endhint %}
+
+```
+dns-hijack:
+- any:53
+- tcp://any:53
 ```
