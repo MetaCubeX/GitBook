@@ -8,21 +8,21 @@ coverY: 0
 ```yaml
 tun:
   enable: true
-  stack: system             # system / gvisor / lwip liwp 仅为 1.13.2 以上的功能
-  dns-hijack:               # 需要劫持的 DNS，‘any:53’ 表示劫持所有 53 流量
+  device: meta              #MacOS建议删除此项
+  stack: system             #system / gvisor / lwip liwp仅为1.13.2以上的功能
+  dns-hijack:
     - 'any:53'
   auto-route: false
   auto-detect-interface: false
-  # mtu: 9000               # 最大传输单元
-  # strict_route: true      # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
-  inet4_route_address:      # 启用 auto_route 时使用自定义路由而不是默认路由
+  # mtu: 9000               #最大传输单元
+  # strict_route: true      #将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
+  inet4_route_address:      #启用 auto_route 时使用自定义路由而不是默认路由
     - 0.0.0.0/1
     - 128.0.0.0/1
-  inet6_route_address:      # 启用 auto_route 时使用自定义路由而不是默认路由
+  inet6_route_address:      #启用 auto_route 时使用自定义路由而不是默认路由
     - '::/1'
     - '8000::/1'
-  # device: meta            # 默认无需设置，MacOS 务必不配置此项
-  # endpoint_independent_nat: false         # 启用独立于端点的 NAT
+  # endpoint_independent_nat: false         #启用独立于端点的 NAT
   # include_uid: # UID 规则仅在 Linux 下被支持，并且需要 auto_route
     # - 0
   # include_uid_range: # 限制被路由的的用户范围

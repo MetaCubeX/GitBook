@@ -39,7 +39,7 @@
   * [其他](function/rule/other-1.md)
 * [TUN模式](function/tun.md)
 * [流量入站](function/liu-liang-ru-zhan.md)
-* [实验性配置](function/test.md)
+* [TLS](function/test.md)
 
 ## 配置文件 <a href="#config" id="config"></a>
 
