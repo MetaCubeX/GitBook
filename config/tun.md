@@ -190,6 +190,12 @@ exclude_uid_range:
 Android用户和应用规则仅在Android下被支持,并且需要`auto_route`
 {% endhint %}
 
+| 常用用户	 | ID  |
+| ----- | --- |
+| 机主    | 0   |
+| 手机分身  | 10  |
+| 应用多开  | 999 |
+
 ```
 include_android_user:
   - 0
