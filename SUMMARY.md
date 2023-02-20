@@ -44,7 +44,7 @@
 ## 配置文件 <a href="#config" id="config"></a>
 
 * [完整配置示例](config/config.md)
-* [一般的clash语法](config/yaml.md)
+* [一般的 clash 语法](config/yaml.md)
 * [全局配置](config/general.md)
 * [tun模式](config/tun.md)
 * [嗅探](config/sniffer.md)

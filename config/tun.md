@@ -41,7 +41,9 @@ description: 配置clash的tun模式
 
 ### enable
 
-是否启用tun模式来路由全局流量
+是否启用 tun 模式来路由全局流量。
+
+可选：`true/false`
 
 ```
 enable: true
@@ -49,25 +51,27 @@ enable: true
 
 ### stack
 
-tun模式堆栈,可选system/gvisor/lwip,如无使用问题,只建议使用`system`栈,MacOS用户推荐`gvisor`栈
+tun模式堆栈，如无使用问题， 建议使用 `system` 栈； MacOS 用户推荐 `gvisor`堆栈。
 
-{% hint style="info" %}
-## 协议栈之间的区别
-
-system栈使用系统堆栈,可以提供更稳定/全面的tun体验,且占用相对其他堆栈更低
-
-gvisor   兼容性较好
-
-lwip  自行测试
-{% endhint %}
+可选： `system/gvisor/lwip`
 
 ```
 stack: system
 ```
 
+{% hint style="info" %}
+## 协议栈之间的区别
+
+* system 使用系统堆栈，可以提供更稳定/全面的 tun 体验，且占用相对其他堆栈更低。
+* &#x20;gvisor  通过在用户空间中实现网络协议栈，可以提供更高的安全性和隔离性，同时可以避免操作系统内核和用户空间之间的切换，从而在特定情况下具有更好的网络处理性能。
+* lwip  采用的是单线程的事件驱动模型，性能一般。
+{% endhint %}
+
 ### auto-route
 
-自动设置全局路由,可以自动将全局流量路由进入tun网卡
+自动设置全局路由，可以自动将全局流量路由进入tun网卡。
+
+可选：`true/false`
 
 ```
 auto-route: true
@@ -77,13 +81,21 @@ auto-route: true
 
 自动选择流量出口接口,多出口网卡同时连接的设备建议手动指定出口网卡
 
+可选：`true/false`
+
 ```
 auto-detect-interface: true
 ```
 
 ### dns-hijack
 
-dns劫持,一般设置为 `any:53` 即可,即劫持所有53端口的udp流量
+dns劫持,一般设置为 `any:53` 即可, 即劫持所有53端口的udp流量
+
+```yaml
+dns-hijack:
+ - any:53
+ - tcp://any:53
+```
 
 {% hint style="warning" %}
 MACOS     无法自动劫持发往局域网的dns请求
@@ -93,15 +105,11 @@ ANDROID  如开启私人dns则无法自动劫持dns请求
 LINUX        如果 systemd-resolved 开启无法自动劫持dns请求
 {% endhint %}
 
-```
-dns-hijack:
-- any:53
-- tcp://any:53
-```
-
 ### strict\_route
 
 严格路由,它可以防止地址泄漏,并使 DNS 劫持在 Android 和使用 systemd-resolved 的 Linux 上工作,但你的设备将无法其他设备被访问
+
+可选：`true/false`
 
 ```
 strict_route: true
@@ -109,7 +117,7 @@ strict_route: true
 
 ### mtu
 
-最大传输单元,值为`1-65534`,会影响极限状态下的速率,一般用户默认即可
+最大传输单元, 值为`1-65534`, 会影响极限状态下的速率,一般用户默认即可。
 
 ```
 mtu: 9000
@@ -117,7 +125,7 @@ mtu: 9000
 
 ### inet4\_route\_address
 
-启用`auto_route`时使用自定义ipv4路由而不是默认路由,一般无需配置
+启用`auto_route`时使用自定义ipv4路由而不是默认路由，一般无需配置。
 
 ```
 inet4_route_address:
@@ -127,7 +135,7 @@ inet4_route_address:
 
 ### inet6\_route\_address
 
-启用`auto_route`时使用自定义ipv6路由而不是默认路由,一般无需配置
+启用`auto_route`时使用自定义ipv6路由而不是默认路由，一般无需配置。
 
 ```
 inet6_route_address:
@@ -137,17 +145,17 @@ inet6_route_address:
 
 ### endpoint\_independent\_nat
 
-启用独立于端点的NAT,性能可能会略有下降,所以不建议在不需要的时候开启
+启用独立于端点的NAT,性能可能会略有下降,所以不建议在不需要的时候开启。
 
 <pre><code><strong>endpoint_independent_nat: false
 </strong></code></pre>
 
 ### include\_uid
 
-限制被路由的的用户,默认不限制
+限制被路由用户，默认不限制。
 
 {% hint style="info" %}
-UID 规则仅在Linux下被支持,并且需要`auto_route`
+UID 规则仅在Linux下被支持，并且需要`auto_route`
 {% endhint %}
 
 ```
