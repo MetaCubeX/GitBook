@@ -222,7 +222,7 @@ exclude_package:
 
 ## tun的协议栈网络回环测试
 
-从上到下分别为system/gvisor/lwip,仅供参考
+从上到下分别为`system/gvisor/lwip`,仅供参考
 
 CPU为amd r7 1700 3.6Ghz,内存8G 3600mhz C16,硬盘为PM981A
 
