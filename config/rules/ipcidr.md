@@ -6,7 +6,7 @@ description: 有三种基于域名的规则,如果请求是域名,匹配IP规则
 
 ## **`IP-CIDR&IP-CIDR6`**
 
-IP规则,如果请求的IP地址匹配指定范围,则会匹配上此规则
+IP规则,如果请求的IP地址匹配上指定的IP范围,则会匹配上此规则
 
 ```
 - IP-CIDR,127.0.0.0/8,DIRECT
@@ -18,6 +18,8 @@ IP规则,如果请求的IP地址匹配指定范围,则会匹配上此规则
 当请求为域名匹配到GEOIP或IP-CIDR规则时,clash将请求DNS查询来检查域名的IP是否匹配此条规则,可以选择“`no-resolve`”选项以跳过域名去进行dns解析
 
 如在更早的匹配中触发了解析,则依旧会匹配到添加了“`no-resolve`”选项的IP规则
+
+如`enhanced-mode`为`redir-host`,则此选项无效
 
 ```
 IP-CIDR,32.0.0.0/8,DIRECT,no-resolve
