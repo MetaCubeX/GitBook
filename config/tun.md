@@ -219,3 +219,5 @@ include_package:
 exclude_package:
   - com.android.captiveportallogin
 ```
+
+## tun的网络栈内网回环测试
