@@ -6,7 +6,7 @@ description: 全局配置定义了 代理端口、允许局域网、运行模式
 
 ## 代理端口
 
-端口是计算机或路由交换机内部的一部分,计算机按照INTERNET传输层 TCP/IP 协议进行通信,不同的协议对应不同的端口
+端口是计算机或路由交换机内部的一部分，计算机按照 INTERNET 传输层 TCP/IP 协议进行通信，不同的协议对应不同的端口
 
 ```
 port: 7890
@@ -61,7 +61,7 @@ mode: rule
 
 ## 日志级别
 
-clash内核输出日志的等级,仅在控制台和控制页面输出
+clash内核输出日志的等级，仅在控制台和控制页面输出。
 
 ```
 log－level: info
@@ -84,7 +84,7 @@ ipv6: true
 
 ## 外部控制(API)
 
-外部控制器可以使用RESTful API来控制你的clash
+外部控制器可以使用 RESTful API 来控制你的 clash 内核。
 
 <pre><code>external-controller: 127.0.0.1:9090 
 # API 监听地址,你可以将127.0.0.1修改为0.0.0.0来监听所有IP
@@ -97,7 +97,7 @@ secret: ""
 
 ## 外部用户界面
 
-可以将静态网页资源(比如clash-dashboard)运行在clash API,路径为 API地址/ui
+可以将静态网页资源(比如clash-dashboard)运行在 clash API,路径为 API地址/ui
 
 ```
 external-ui: ./dashboard
