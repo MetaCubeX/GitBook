@@ -58,7 +58,7 @@ system栈使用系统堆栈,可以提供更稳定/全面的tun体验,且占用�
 
 gvisor   兼容性较好
 
-lwip      评价为垃圾
+lwip      评价为,性能垃圾
 {% endhint %}
 
 ```
