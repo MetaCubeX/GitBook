@@ -49,16 +49,16 @@ enable: true
 
 ### stack
 
-tun模式堆栈,可选system/gvisor/lwip,如无使用问题,只建议使用`system`栈
+tun模式堆栈,可选system/gvisor/lwip,如无使用问题,只建议使用`system`栈,MacOS用户推荐`gvisor`栈
 
 {% hint style="info" %}
 ## 协议栈之间的区别
 
 system栈使用系统堆栈,可以提供更稳定/全面的tun体验,且占用相对其他堆栈更低
 
-gvisor
+gvisor   兼容性较好
 
-lwip
+lwip      评价为垃圾
 {% endhint %}
 
 ```
