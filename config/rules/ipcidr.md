@@ -19,8 +19,6 @@ IP规则,如果请求的IP地址匹配上指定的IP范围,则会匹配上此规
 
 如在更早的匹配中触发了解析,则依旧会匹配到添加了“`no-resolve`”选项的IP规则
 
-如`enhanced-mode`为`redir-host`,则此选项无效
-
 ```
 IP-CIDR,32.0.0.0/8,DIRECT,no-resolve
 ```
