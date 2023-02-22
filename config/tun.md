@@ -62,9 +62,10 @@ stack: system
 {% hint style="info" %}
 ## 协议栈之间的区别
 
-* system 使用系统堆栈，可以提供更稳定/全面的 tun 体验，且占用相对其他堆栈更低。
+* system 使用系统协议栈，可以提供更稳定/全面的 tun 体验，且占用相对其他堆栈更低。
 * gvisor  通过在用户空间中实现网络协议栈，可以提供更高的安全性和隔离性，同时可以避免操作系统内核和用户空间之间的切换，从而在特定情况下具有更好的网络处理性能。
-* lwip  即 lightweight IP，采用单线程的事件驱动模型，性能相较一般。
+* lwip  即 lightweight IP，是一款专为嵌入式系统设计的TCP/IP协议栈，采用了单线程的事件驱动模型，性能表现可能不如`system/gvisor`协议栈。
+* [性能测试](tun.md#tun-de-xie-yi-zhan-wang-luo-hui-huan-ce-shi)
 {% endhint %}
 
 ### auto-route
@@ -228,7 +229,7 @@ exclude_package:
   - com.android.captiveportallogin
 ```
 
-## tun的协议栈网络回环测试
+## Tun 的协议栈网络回环测试&#x20;
 
 从上到下分别为`system/gvisor/lwip`,仅供参考,平台为linux,Windows和MacOS可能会有差异
 
