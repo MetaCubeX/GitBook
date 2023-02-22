@@ -46,7 +46,7 @@
 * [完整配置示例](config/config.md)
 * [一般的 clash 语法](config/yaml.md)
 * [全局配置](config/general.md)
-* [tun 模式](config/tun.md)
+* [Tun 模式](config/tun.md)
 * [嗅探](config/sniffer.md)
 * [DNS](config/dns.md)
   * [hosts](config/dns/hosts.md)
