@@ -218,7 +218,8 @@ dns:
 
 #### <mark style="color:blue;">代理配置：</mark>
 
-<pre class="language-yaml"><code class="lang-yaml">proxies:
+```yaml
+proxies:
     
     #【Meta专属】Hysteria
   - name: "hysteria"
@@ -311,9 +312,8 @@ dns:
   #   aes-128-ctr aes-192-ctr aes-256-ctr
   #   rc4-md5 chacha20-ietf xchacha20
   #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
-<strong> 
-</strong><strong>  #【Meta专属】支持SS2022加密：
-</strong>  #   2022-blake3-aes-128-gcm
+  #【Meta专属】支持SS2022加密：
+  #   2022-blake3-aes-128-gcm
   #   2022-blake3-aes-256-gcm
   #   2022-blake3-chacha20-poly1305
   - name: "ss1"
@@ -516,7 +516,7 @@ dns:
     # protocol-param: "#"
     # udp: true
 
-</code></pre>
+```
 
 #### <mark style="color:blue;">代理组配置：</mark>
 
@@ -605,7 +605,7 @@ proxy-groups:
 
 #### <mark style="color:blue;">Providers 配置：</mark>
 
-```
+```yaml
 proxy-providers:
   provider1:
     type: http
