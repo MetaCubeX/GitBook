@@ -17,6 +17,12 @@ mixed-port: 7890             #本地混合代理(http和socks5合并）端口
 #  - "user1:pass1"
 #  - "user2:pass2"
 
+find-process-mode: strict     # always/ strict/ off 
+                              #  进程匹配模式:
+                              #  - always, 强制匹配所有进程
+                              #  - strict, 默认，由 clash 判断是否开启
+                              #  - off, 不匹配进程，推荐在路由器上使用此模式
+
 # geodata-mode: true         #【Meta专属】使用geoip.dat数据库(默认：false使用mmdb数据库)
 tcp-concurrent: true         #【Meta专属】TCP连接并发，如果域名解析结果对应多个IP，
                              # 并发所有IP，选择握手最快的IP进行连接
@@ -66,49 +72,42 @@ tun:
   enable: false
   stack: system # gvisor / lwip
   dns-hijack:
-    - 0.0.0.0:53 # 需要劫持的 DNS
-  auto-detect-interface: true # 自动识别出口网卡
-  auto-route: true # 配置路由表
-  mtu: 9000 # 最大传输单元
-  # strict_route: true # 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
+    - 0.0.0.0:53               # 需要劫持的 DNS
+  auto-detect-interface: true  # 自动识别出口网卡
+  auto-route: true             # 配置路由表
+  mtu: 9000                    # 最大传输单元
+  # strict_route: true  # 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
 ```
 
 #### <mark style="color:blue;">DNS配置：</mark>
 
 ```yaml
-sniffer:                         #【Meta专属】sniffer域名嗅探器
-  enable: false                   # 嗅探器开关       
-  # 开启后对 redir-host 类型识别的流量进行强制嗅探
-  # 如：Tun、Redir 和 TProxy 并 DNS 为 redir-host 皆属于
+sniffer:                           #【Meta专属】sniffer域名嗅探器
+  enable: false                    # 嗅探器开关       
+                                   # 开启后对 redir-host 类型识别的流量进行强制嗅探
+                                   # 包含 Tun、Redir 和 TProxy 或 DNS 为 redir-host
   # force-dns-mapping: false
+  # parse-pure-ip: false           # 对所有未获取到域名的流量进行强制嗅探
   
-  # 对所有未获取到域名的流量进行强制嗅探
-  # parse-pure-ip: false
-  
-  # 是否使用嗅探结果作为实际访问，默认 true
-  # 全局配置，优先级低于 sniffer.sniff 实际配置
-  override-destination: false
+  override-destination: false      # 是否使用嗅探结果作为实际访问，默认 true
+                                   # 全局配置，优先级低于 sniffer.sniff 实际配置
   sniff: # TLS 默认如果不配置 ports 默认嗅探 443
     TLS:
-    #  ports: [443, 8443]
-    
-    # 默认嗅探 80
-    HTTP: # 需要嗅探的端口
-      
+      ports: [443, 8443]
+    HTTP: # 需要嗅探的端口, 默认嗅探 80
       ports: [80, 8080-8880]
-      # 可覆盖 sniffer.override-destination
-      override-destination: true
+      override-destination: true # 可覆盖 sniffer.override-destination
   force-domain:
     - +.v2ex.com
   # 白名单，跳过嗅探结果
-  # skip-domain:
-  #   - Mijia Cloud
-
+  skip-domain:
+    - Mijia Cloud
 
 hosts:                           #host，支持通配符（非通配符域名优先级高于通配符域名）
   # '*.clash.dev': 127.0.0.1     #例如foo.example.com>*.example.com>.example.com
   # '.dev': 127.0.0.1
   # 'alpha.clash.dev': '::1'
+  
 dns:
   enable: true                 #DNS开关(false/true)
   listen: 0.0.0.0:53           #DNS监听地址
