@@ -1,8 +1,26 @@
-# Vless节点支持
+# VLESS 节点支持
 
 Meta增加了Vless协议支持，具体格式如下：
 
-#### <mark style="color:blue;">Vless-TCP</mark>
+#### <mark style="color:blue;">VLESS-xtls-rprx-vision</mark>
+
+```yaml
+  - name: "vless-vision"
+    type: vless
+    server: server
+    port: 443
+    uuid: uuid
+    network: tcp
+    tls: true
+    udp: true
+    xudp: true
+    flow: xtls-rprx-vision 
+    client-fingerprint: chrome
+    # fingerprint: xxxx
+    # skip-cert-verify: true
+```
+
+#### <mark style="color:blue;">VLESS-TCP</mark>
 
 例：
 
@@ -22,7 +40,7 @@ proxies:
 
 
 
-#### <mark style="color:blue;">Vless-WS</mark>
+#### <mark style="color:blue;">VLESS-WS</mark>
 
 例：
 

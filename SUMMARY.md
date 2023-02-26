@@ -17,7 +17,7 @@
   * [代理服务器解析DNS](function/dns/dnsproxy.md)
   * [Fallback功能扩展](function/dns/fallback.md)
 * [代理配置](function/proxy/README.md)
-  * [Vless节点支持](function/proxy/vless.md)
+  * [VLESS 节点支持](function/proxy/vless.md)
   * [Hysteria节点支持](function/proxy/hysteria.md)
   * [Tuic 节点支持](function/proxy/tuic-jie-dian-zhi-chi.md)
   * [Wireguard节点支持](function/proxy/wireguard.md)
