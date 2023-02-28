@@ -4,7 +4,7 @@
 
 目标端口规则,匹配请求的目标端口
 
-<pre><code><strong>- DST-PORT,22,DIRECT
+<pre><code><strong>DST-PORT,22,DIRECT
 </strong></code></pre>
 
 ## `SRC-PORT`
@@ -12,7 +12,7 @@
 `来源端口规则,`匹配请求来源的端口
 
 ```
-- SRC-PORT,7890,DIRECT
+SRC-PORT,7890,DIRECT
 ```
 
 ## 端口范围写法
@@ -24,17 +24,17 @@
 匹配114和514端口
 
 ```
-- DST-PORT,114/514,DIRECT
+DST-PORT,114/514,DIRECT
 ```
 
 匹配114到514端口
 
 ```
-- DST-PORT,114/514,DIRECT
+DST-PORT,114/514,DIRECT
 ```
 
 匹配114和233以及514到1919端口
 
 ```
-- DST-PORT,114/233/514-1919,DIRECT
+DST-PORT,114/233/514-1919,DIRECT
 ```

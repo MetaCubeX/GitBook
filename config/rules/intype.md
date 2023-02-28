@@ -5,7 +5,7 @@
 匹配流量入站的类型
 
 ```
-- IN-TYPE,INNER,proxy
+IN-TYPE,INNER,proxy
 ```
 
 ### 支持的类型
