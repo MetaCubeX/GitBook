@@ -5,7 +5,7 @@ coverY: 0
 
 # 基础配置
 
-**监听设置**：
+#### **监听设置**：
 
 ```yaml
 #此处省略部分设置#
@@ -55,7 +55,7 @@ profile:
 #此处省略部分设置#
 ```
 
-**Geodata 配置** ：
+#### **Geodata 配置 ：**
 
 ```yaml
 geodata-mode: true         #【Meta专属】使用geoip.dat数据库(默认：false使用mmdb数据库)
@@ -92,7 +92,7 @@ tcp-concurrent: true         #【Meta专属】TCP连接并发，如果域名解�
 
 **tcp-concurrent：**当为`true`时，如果域名解析结果对应多个IP，并发请求所有IP，选择握手最快的IP进行通讯。
 
-**全局客户端指纹**：
+#### **全局客户端指纹**：
 
 ```yaml
 # 全局 TLS 指纹，优先低于 proxy 内的 client-fingerprint

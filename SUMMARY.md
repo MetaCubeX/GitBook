@@ -43,7 +43,7 @@
 
 ## 配置文件 <a href="#config" id="config"></a>
 
-* [完整配置示例](config/config.md)
+* [完整配置示例](config/ex1.md)
 * [一般的 clash 语法](config/yaml.md)
 * [全局配置](config/general.md)
 * [Tun 模式](config/tun.md)
@@ -86,7 +86,7 @@
   * [最终匹配](config/rules/match.md)
 * [规则集合](config/rule-providers.md)
 * [子规则](config/sub-rules.md)
-* [流量入站](config/listeners.md)
+* [流量入站](config/liu-liang-ru-zhan.md)
 * [隧道](config/tunnels.md)
 
 ## 关于

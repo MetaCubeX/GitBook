@@ -8,7 +8,7 @@ description: clash的dns模块配置
 
 以下的拆分说明皆是 dns: 下的配置项
 
-```
+```yaml
 dns:
   enable: true
   prefer-h3: true

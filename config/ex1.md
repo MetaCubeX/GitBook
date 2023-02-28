@@ -1,11 +1,11 @@
-# 完整示例
+# 完整配置示例
 
 {% hint style="info" %}
 * 原开源Clash内核配置部分主要引自 [**Clash Wiki**](https://lancellc.gitbook.io/clash/clash-config-file/an-example-configuration-file) ，做了小部分调整和翻译；
 * 注释标记<mark style="color:blue;">【Meta专属】</mark>内容为Meta核新特有功能，在其他Clash核心使用可能造成意想不到的后果。
 {% endhint %}
 
-## <mark style="color:blue;">基础配置</mark>
+## <mark style="color:blue;">基础配置：</mark>
 
 <pre class="language-yaml"><code class="lang-yaml"># port: 7890                 #本地http代理端口
 # socks-port: 7891           #本地socks5代理端口
@@ -79,7 +79,7 @@ tun:
   # strict_route: true  # 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
 ```
 
-## <mark style="color:blue;">DNS配置</mark>
+## <mark style="color:blue;">DNS配置：</mark>
 
 ```yaml
 sniffer:                           #【Meta专属】sniffer域名嗅探器
@@ -215,7 +215,7 @@ dns:
   #   - "+.mcdn.bilivideo.cn"
 ```
 
-## <mark style="color:blue;">代理配置</mark>
+## <mark style="color:blue;">代理配置：</mark>
 
 ```yaml
 proxies:
@@ -517,7 +517,7 @@ proxies:
 
 ```
 
-## <mark style="color:blue;">代理组配置</mark>
+#### <mark style="color:blue;">代理组配置：</mark>
 
 ```yaml
 proxy-groups:
@@ -602,7 +602,7 @@ proxy-groups:
          
 ```
 
-## <mark style="color:blue;">Providers 配置</mark>
+#### <mark style="color:blue;">Providers 配置：</mark>
 
 ```yaml
 proxy-providers:
@@ -634,7 +634,7 @@ rule-providers:
     interval: 600   
 ```
 
-## <mark style="color:blue;">规则配置</mark>
+#### <mark style="color:blue;">规则配置：</mark>
 
 ```yaml
 rules:
