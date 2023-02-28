@@ -6,7 +6,7 @@ description: 当代理节点url测试超时时,按照节点顺序选择
 
 ## 配置示例
 
-```
+```yaml
 proxy-groups:
   - name: "fallback"
     type: fallback

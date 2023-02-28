@@ -6,7 +6,7 @@ description: 展示如何在策略组内引用代理集合内的代理节点
 
 ## 配置示例
 
-<pre><code>proxy-providers:
+<pre class="language-yaml"><code class="lang-yaml">proxy-providers:
   meta:
 <strong>    type: http
 </strong>    path: ./meta.yaml
@@ -23,4 +23,3 @@ proxy-groups:
     use:
       - meta
 </code></pre>
-

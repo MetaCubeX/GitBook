@@ -6,7 +6,7 @@ description: 配置clash的tun模式
 
 ## 配置示例
 
-<pre><code>tun:
+<pre class="language-yaml"><code class="lang-yaml">tun:
   enable: true
   stack: system
   auto-detect-interface: true

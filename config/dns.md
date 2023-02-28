@@ -55,7 +55,7 @@ dns:
 
 是否启用,如为false，则使用系统dns解析
 
-```
+```yaml
 dns:
   enable: true
 ```
@@ -66,7 +66,7 @@ dns:
 
 是否开启DOH的http/3
 
-```
+```yaml
 prefer-h3: true
 ```
 
@@ -74,7 +74,7 @@ prefer-h3: true
 
 dns服务监听
 
-```
+```yaml
 listen: 0.0.0.0:1053
 ```
 
@@ -84,7 +84,7 @@ listen: 0.0.0.0:1053
 
 是否解析IPV6,如为false,则回应AAAA的空解析
 
-```
+```yaml
 ipv6: true
 ```
 
@@ -94,7 +94,7 @@ ipv6: true
 
 clash的dns处理模式
 
-```
+```yaml
 enhanced-mode: fake-ip
 ```
 
@@ -104,7 +104,7 @@ enhanced-mode: fake-ip
 
 fakeip下的IP段设置, tun网卡的默认ip也使用此值
 
-```
+```yaml
 fake-ip-range: 198.18.0.1/16
 ```
 
@@ -112,7 +112,7 @@ fake-ip-range: 198.18.0.1/16
 
 fakeip过滤,以下地址不会下发fakeip映射用于连接
 
-```
+```yaml
 fake-ip-filter:
   - '*.lan'
   - localhost.ptlogin2.qq.com
@@ -124,7 +124,7 @@ fake-ip-filter:
 
 是否查询系统hosts
 
-```
+```yaml
 use-hosts: true
 ```
 
@@ -134,7 +134,7 @@ use-hosts: true
 
 必须为ip,可为加密dns
 
-```
+```yaml
 default-nameserver:
   - 114.114.114.114
   - 8.8.8.8
@@ -148,7 +148,7 @@ default-nameserver:
 
 `可书写多个,并发查询,以下仅作为书写演示`
 
-```
+```yaml
 nameserver-policy:
   'www.baidu.com': '114.114.114.114'
   '+.internal.crop.com': '10.0.0.1'
@@ -163,7 +163,7 @@ nameserver-policy:
 
 默认的域名解析服务器,如不配置 `fallback/proxy-server-nameserver` ,则所有域名都由nameserver解析
 
-```
+```yaml
 nameserver:
   - tls://dot.pub
   - https://dns.alidns.com/dns-query
@@ -173,7 +173,7 @@ nameserver:
 
 代理节点域名解析服务器,仅用于解析代理节点的域名
 
-```
+```yaml
  proxy-server-nameserver:
    - https://doh.pub/dns-query
 ```
@@ -184,7 +184,7 @@ nameserver:
 
 配置`fallback`后默认启用`fallback-filter`,`geoip-code`为cn
 
-```
+```yaml
 fallback:
   - tls://dns.google
   - https://1.0.0.1/dns-query
@@ -224,7 +224,7 @@ geosite列表的内容被视为已污染,匹配到geosite的域名,将只使用`
 
 这些域名被视为已污染,匹配到这些域名,会直接使用`fallback`解析,不去使用`nameserver`
 
-```
+```yaml
 fallback-filter:
     geoip: true
     geoip-code: CN

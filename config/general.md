@@ -35,7 +35,7 @@ tproxy－port: 7894
 
 允许其他设备经过clash的代理端口访问互联网
 
-```
+```yaml
 allow-lan: true
 # 可选值 true/false
 
@@ -53,7 +53,7 @@ authentication:
 
 ## 运行模式
 
-```
+```yaml
 mode: rule
 # rule(规则) / global(全局) / direct(直连)
 # 此项拥有默认值,默认为规则模式
@@ -63,7 +63,7 @@ mode: rule
 
 clash内核输出日志的等级，仅在控制台和控制页面输出。
 
-```
+```yaml
 log－level: info
 # 各个等级
 # silent  静默,不输出
@@ -75,7 +75,7 @@ log－level: info
 
 ## IPV6
 
-```
+```yaml
 ipv6: true
 # 可选值 true/false
 # 是否允许内核接受ipv6流量
@@ -86,7 +86,7 @@ ipv6: true
 
 外部控制器可以使用 RESTful API 来控制你的 clash 内核。
 
-<pre><code>external-controller: 127.0.0.1:9090 
+<pre class="language-yaml"><code class="lang-yaml">external-controller: 127.0.0.1:9090 
 # API 监听地址,你可以将127.0.0.1修改为0.0.0.0来监听所有IP
 <strong>external-controller-tls: 127.0.0.1:9443
 </strong># API HTTPS 监听地址，需要配置 tls 部分配置文件
@@ -99,7 +99,7 @@ secret: ""
 
 可以将静态网页资源(比如clash-dashboard)运行在 clash API,路径为 API地址/ui
 
-```
+```yaml
 external-ui: ./dashboard
 # 可以为绝对路径,或者clash工作目录的相对路径
 ```
@@ -108,7 +108,7 @@ external-ui: ./dashboard
 
 在clash官方中,profile应为扩展配置,但在clash.meta,仅作为缓存项使用
 
-```
+```yaml
 profile:
   store-selected: true
   # 储存 API 对策略组的选择,以供下次启动时使用
@@ -118,7 +118,7 @@ profile:
 
 ## 出站接口
 
-```
+```yaml
 interface-name: en0
 # clash的流量出站接口
 ```
@@ -127,7 +127,7 @@ interface-name: en0
 
 为Linux下的出站连接提供默认流量标记
 
-```
+```yaml
 routing-mark: 6666
 ```
 
@@ -135,7 +135,7 @@ routing-mark: 6666
 
 目前仅用于API的https
 
-```
+```yaml
 tls:
   certificate: string # 证书 PEM 格式，或者 证书的路径
   private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径

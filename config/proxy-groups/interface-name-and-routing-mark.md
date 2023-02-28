@@ -6,7 +6,7 @@ description: 可以为策略组指定出站接口以及出站流量标记
 
 ## 配置示例
 
-```
+```yaml
 proxy-groups:
     - name: "直连"
     type: select

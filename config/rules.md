@@ -24,7 +24,7 @@ clash的规则都有三个部分(MATCH除外),分别为: 类型,匹配内容,策
 这只是一个示例,请不要照搬
 {% endhint %}
 
-```
+```yaml
 rules:
   - DOMAIN-SUFFIX,google.com,auto
   - DOMAIN-KEYWORD,google,auto

@@ -5,7 +5,7 @@
 * 注释标记<mark style="color:blue;">【Meta专属】</mark>内容为Meta核新特有功能，在其他Clash核心使用可能造成意想不到的后果。
 {% endhint %}
 
-## <mark style="color:blue;">基础配置：</mark>
+## <mark style="color:blue;">基础配置</mark>
 
 <pre class="language-yaml"><code class="lang-yaml"># port: 7890                 #本地http代理端口
 # socks-port: 7891           #本地socks5代理端口
@@ -44,7 +44,6 @@ tls:                  # 面板 TLS
   certificate: string # 证书 PEM 格式，或者 证书的路径
   private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
 
-
 external-controller: 0.0.0.0:9093 # RESTful API 监听地址
 external-controller-tls: 0.0.0.0:9443 # RESTful API HTTPS 监听地址，需要配置 tls 部分配置文件
 
@@ -58,19 +57,19 @@ external-ui: folder                   #http服务路径，可以放静态web网�
 global-client-fingerprint: chrome
 
 <strong># interface-name: en0        #出口网卡名称
-</strong>routing-mark: 6666         #流量标记(仅Linux)
+</strong># routing-mark: 6666         #流量标记(仅Linux)
 
 profile:                   #缓存设置(文件位置./cache.db)
   store-selected: false    #节点状态记忆（若不同配置有同代理名称,设置值共享）
   store-fake-ip: true      #fake-ip缓存
 </code></pre>
 
-## <mark style="color:blue;">TUN 配置：</mark>
+## <mark style="color:blue;">TUN 配置</mark>
 
 ```yaml
 tun:
   enable: false
-  stack: system # gvisor / lwip
+  stack: system # system / gvisor / lwip
   dns-hijack:
     - 0.0.0.0:53               # 需要劫持的 DNS
   auto-detect-interface: true  # 自动识别出口网卡
@@ -79,7 +78,7 @@ tun:
   # strict_route: true  # 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
 ```
 
-## <mark style="color:blue;">DNS配置：</mark>
+## <mark style="color:blue;">DNS配置</mark>
 
 ```yaml
 sniffer:                           #【Meta专属】sniffer域名嗅探器
@@ -215,7 +214,7 @@ dns:
   #   - "+.mcdn.bilivideo.cn"
 ```
 
-## <mark style="color:blue;">代理配置：</mark>
+## <mark style="color:blue;">代理配置</mark>
 
 ```yaml
 proxies:
@@ -517,7 +516,7 @@ proxies:
 
 ```
 
-#### <mark style="color:blue;">代理组配置：</mark>
+## <mark style="color:blue;">代理组配置</mark>
 
 ```yaml
 proxy-groups:
@@ -602,7 +601,7 @@ proxy-groups:
          
 ```
 
-#### <mark style="color:blue;">Providers 配置：</mark>
+## <mark style="color:blue;">Providers 配置</mark>
 
 ```yaml
 proxy-providers:
@@ -634,7 +633,7 @@ rule-providers:
     interval: 600   
 ```
 
-#### <mark style="color:blue;">规则配置：</mark>
+## <mark style="color:blue;">规则配置</mark>
 
 ```yaml
 rules:
@@ -686,14 +685,14 @@ rules:
   - GEOSITE,cn,DIRECT
   - GEOSITE,geolocation-!cn,PROXY
   
-  #GEOIP规则  
+  # Rule Provider规则
+  - RULE-SET,google,PROXY                   # Meta支持RULE-SET规则
+  
+  # GEOIP规则  
   - GEOIP,telegram,PROXY,no-resolve
   - GEOIP,private,DIRECT,no-resolve
   - GEOIP,cn,DIRECT
-
-  #Rule Provider规则
-  - RULE-SET,google,REJECT                   # Meta支持RULE-SET规则
   
-  #兜底规则
+  # 兜底规则
   - MATCH,auto
 ```
