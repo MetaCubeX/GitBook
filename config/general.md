@@ -141,6 +141,20 @@ tls:
   private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
 ```
 
+## **全局客户端指纹**
+
+全局 TLS 指纹，优先低于 proxy 内的 client-fingerprint。
+
+目前支持开启 TLS 传输的  TCP/grpc/WS/HTTP ，支持协议有 VLESS，Vmess 和 trojan.
+
+```yaml
+global-client-fingerprint: chrome
+```
+
+{% hint style="info" %}
+可选："chrome","firefox","safari","ios","random","none"&#x20;
+{% endhint %}
+
 ## EBPF模块
 
 1
