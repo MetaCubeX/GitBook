@@ -26,5 +26,5 @@ proxy-groups:
 
 
 {% hint style="danger" %}
-本文内容只展示Meta专属特性，全部<mark style="color:blue;">代理组配置</mark>内容请参阅 [**完整示例**](../../example/ex1.md#dai-li-zu-pei-zhi) ，或者请查阅 [Clash Wiki](https://lancellc.gitbook.io/clash/clash-config-file/proxy-groups) 。
+本文内容只展示Meta专属特性，全部<mark style="color:blue;">代理组配置</mark>内容请参阅 [**完整示例**](broken-reference) ，或者请查阅 [Clash Wiki](https://lancellc.gitbook.io/clash/clash-config-file/proxy-groups) 。
 {% endhint %}

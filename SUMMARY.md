@@ -2,10 +2,7 @@
 
 * [简介](README.md)
 * [使用Meta的客户端](used.md)
-
-## 配置文件 <a href="#example" id="example"></a>
-
-* [完整示例](example/ex1.md)
+* [完整配置示例](example.md)
 
 ## Meta特性 <a href="#function" id="function"></a>
 
@@ -41,9 +38,8 @@
 * [流量入站](function/liu-liang-ru-zhan.md)
 * [实验性配置](function/test.md)
 
-## 配置文件 <a href="#config" id="config"></a>
+## 配置文件 WIP <a href="#config" id="config"></a>
 
-* [完整配置示例](config/ex1.md)
 * [一般的 clash 语法](config/yaml.md)
 * [全局配置](config/general.md)
 * [Tun 模式](config/tun.md)
