@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/banner11.jpg
+cover: ../.gitbook/assets/banner11.jpg
 coverY: 0
 ---
 
@@ -36,11 +36,3 @@ coverY: 0
 #### Shell:
 
 <mark style="color:blue;">**ShellClash**</mark>                             <mark style="color:blue;"></mark><mark style="color:blue;"></mark>                             [<mark style="color:blue;">https://github.com/juewuy/ShellClash</mark>](https://github.com/juewuy/ShellClash)<mark style="color:blue;"></mark>\ <mark style="color:blue;"></mark><mark style="color:blue;">**Clash Tproxy Android**</mark>          <mark style="color:blue;"></mark><mark style="color:blue;"></mark>          [<mark style="color:blue;">https://t.me/e58695/59</mark>](https://t.me/e58695/59)<mark style="color:blue;"></mark>\ <mark style="color:blue;"></mark>
-
-{% hint style="info" %}
-支持Meta特性的在线面板
-
-http://clash.metacubex.one
-
-http://yacd.metacubex.one
-{% endhint %}

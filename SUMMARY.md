@@ -1,7 +1,8 @@
 # Table of contents
 
 * [简介](README.md)
-* [使用Meta的客户端](used.md)
+* [使用Meta的客户端](used/README.md)
+  * [在线面板](used/zai-xian-mian-ban.md)
 * [完整配置示例](example.md)
 
 ## Meta特性 <a href="#function" id="function"></a>
