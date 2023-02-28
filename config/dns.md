@@ -146,18 +146,17 @@ default-nameserver:
 
 指定域名查询的解析服务器,可使用 geosite,优先于`nameserver/fallback 查询`
 
-`可书写多个,并发查询,以下仅作为书写演示`
+可书写多个,并发查询,以下仅作为书写演示
 
-```yaml
-nameserver-policy:
-  'www.baidu.com': '114.114.114.114'
+<pre class="language-yaml"><code class="lang-yaml"><strong>nameserver-policy:
+</strong>  'www.baidu.com': '114.114.114.114'
   '+.internal.crop.com': '10.0.0.1'
   'geosite:cn': https://doh.pub/dns-query
   'geosite:geolocation-!cn': [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
   'geosite:gfw':
   - tls://8.8.4.4
   - tls://1.0.0.1
-```
+</code></pre>
 
 ### nameserver
 
@@ -174,8 +173,8 @@ nameserver:
 代理节点域名解析服务器,仅用于解析代理节点的域名
 
 ```yaml
- proxy-server-nameserver:
-   - https://doh.pub/dns-query
+proxy-server-nameserver:
+ - https://doh.pub/dns-query
 ```
 
 ### fallback

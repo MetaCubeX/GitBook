@@ -35,17 +35,14 @@
   * [GEO规则](function/rule/geo.md)
   * [子规则集](function/rule/other.md)
   * [其他](function/rule/other-1.md)
-* [TUN模式](function/tun.md)
-* [流量入站](function/liu-liang-ru-zhan.md)
-* [实验性配置](function/test.md)
 
 ## 配置文件 WIP <a href="#config" id="config"></a>
 
 * [一般的 clash 语法](config/yaml.md)
 * [全局配置](config/general.md)
 * [Tun 模式](config/tun.md)
-* [嗅探](config/sniffer.md)
 * [DNS](config/dns.md)
+  * [域名嗅探](config/dns/sniffer.md)
   * [hosts](config/dns/hosts.md)
 * [代理](config/proxies.md)
   * [socks](config/proxies/socks.md)
@@ -85,6 +82,7 @@
 * [子规则](config/sub-rules.md)
 * [流量入站](config/liu-liang-ru-zhan.md)
 * [隧道](config/tunnels.md)
+* [实验性配置](config/test.md)
 
 ## 关于
 
