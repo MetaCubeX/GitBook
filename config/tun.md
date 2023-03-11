@@ -9,6 +9,7 @@ description: 配置clash的tun模式
 <pre class="language-yaml"><code class="lang-yaml">tun:
   enable: true
   stack: system
+  device: utun0
   auto-detect-interface: true
   auto-route: true
   dns-hijack:
@@ -51,7 +52,7 @@ enable: true
 
 ### stack
 
-tun模式堆栈，如无使用问题， 建议使用 `system` 栈； MacOS 用户推荐 `gvisor`堆栈。
+tun模式堆,如无使用问题,建议使用 `system` 栈;MacOS 用户推荐 `gvisor`栈,IOS无法使用`systen`栈
 
 可选： `system/gvisor/lwip`
 
@@ -60,13 +61,21 @@ stack: system
 ```
 
 {% hint style="info" %}
-## 协议栈之间的区别
+### 协议栈之间的区别
 
 * system 使用系统协议栈，可以提供更稳定/全面的 tun 体验，且占用相对其他堆栈更低。
-* gvisor  通过在用户空间中实现网络协议栈，可以提供更高的安全性和隔离性，同时可以避免操作系统内核和用户空间之间的切换，从而在特定情况下具有更好的网络处理性能。
-* lwip  即 lightweight IP，是一款专为嵌入式系统设计的TCP/IP协议栈，采用了单线程的事件驱动模型，性能表现可能不如`system/gvisor`协议栈。
+* gvisor 通过在用户空间中实现网络协议栈，可以提供更高的安全性和隔离性，同时可以避免操作系统内核和用户空间之间的切换，从而在特定情况下具有更好的网络处理性能。
+* lwip 即 lightweight IP，是一款专为嵌入式系统设计的TCP/IP协议栈，采用了单线程的事件驱动模型，性能表现可能不如`system/gvisor`协议栈。
 * [性能测试](tun.md#tun-de-xie-yi-zhan-wang-luo-hui-huan-ce-shi)
 {% endhint %}
+
+### device
+
+指定tun网卡名称,MacOS设备只能使用utun开头的网卡名
+
+```
+device: utun0
+```
 
 ### auto-route
 
@@ -99,11 +108,11 @@ dns-hijack:
 ```
 
 {% hint style="warning" %}
-MACOS     无法自动劫持发往局域网的dns请求
+MACOS 无法自动劫持发往局域网的dns请求
 
-ANDROID  如开启私人dns则无法自动劫持dns请求
+ANDROID 如开启私人dns则无法自动劫持dns请求
 
-LINUX        如果 systemd-resolved 开启无法自动劫持dns请求
+LINUX 如果 systemd-resolved 开启无法自动劫持dns请求
 {% endhint %}
 
 ### strict\_route
@@ -199,11 +208,11 @@ exclude_uid_range:
 Android用户和应用规则仅在Android下被支持,并且需要`auto_route`
 {% endhint %}
 
-| 常用用户	 | ID  |
-| ----- | --- |
-| 机主    | 0   |
-| 手机分身  | 10  |
-| 应用多开  | 999 |
+| 常用用户 | ID  |
+| ---- | --- |
+| 机主   | 0   |
+| 手机分身 | 10  |
+| 应用多开 | 999 |
 
 ```
 include_android_user:
@@ -229,7 +238,7 @@ exclude_package:
   - com.android.captiveportallogin
 ```
 
-## Tun 的协议栈网络回环测试&#x20;
+## Tun 的协议栈网络回环测试
 
 从上到下分别为`system/gvisor/lwip`,仅供参考,平台为linux,Windows和MacOS可能会有差异
 

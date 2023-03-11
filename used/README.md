@@ -7,7 +7,11 @@ coverY: 0
 
 #### Windows：
 
-<mark style="color:blue;">**Clash Verge**</mark> [<mark style="color:blue;">https://github.com/zzzgydi/clash-verge</mark>](https://github.com/zzzgydi/clash-verge)\ <mark style="color:blue;">**Clash N**</mark> [<mark style="color:blue;">**https://github.com/2dust/clashN**</mark>](https://github.com/2dust/clashN)**\ **<mark style="color:blue;">**V2ray N**</mark>** ** <mark style="color:blue;">\*\*\*\*</mark> [<mark style="color:blue;">https://github.com/2dust/v2rayN</mark>](https://github.com/2dust/v2rayN)
+<mark style="color:blue;">**Clash Verge**</mark> [<mark style="color:blue;">https://github.com/zzzgydi/clash-verge</mark>](https://github.com/zzzgydi/clash-verge)<mark style="color:blue;">****</mark>
+
+<mark style="color:blue;">**Clash N**</mark> [<mark style="color:blue;">**https://github.com/2dust/clashN**</mark>](https://github.com/2dust/clashN)<mark style="color:blue;">****</mark>
+
+<mark style="color:blue;">**V2ray N**</mark>** ** <mark style="color:blue;">\*\*\*\*</mark> [<mark style="color:blue;">https://github.com/2dust/v2rayN</mark>](https://github.com/2dust/v2rayN)
 
 #### Mac OS：
 
