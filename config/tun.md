@@ -73,7 +73,9 @@ stack: system
 
 指定tun网卡名称,MacOS设备只能使用utun开头的网卡名
 
+```
 device: utun0
+```
 
 ### auto-route
 
