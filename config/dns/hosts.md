@@ -15,7 +15,7 @@ hosts:
   clash.lan: clash
 ```
 
-hosts域名支持通配,例如`*.clash.dev`或`*.foo.*.example.com`,别名(示例最后两个)不支持通配
+hosts域名支持通配,例如`*.clash.dev`或`+.example.com`,别名(示例最后两个)不支持通配
 
 支持单域名多ip,格式为数组
 
