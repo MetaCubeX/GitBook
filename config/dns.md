@@ -156,6 +156,8 @@ default-nameserver:
   'geosite:gfw':
   - tls://8.8.4.4
   - tls://1.0.0.1
+  "www.baidu.com,+.google.cn": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
+  "geosite:cn,private,apple": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
 </code></pre>
 
 ### nameserver
