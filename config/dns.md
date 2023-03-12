@@ -153,11 +153,8 @@ default-nameserver:
   '+.internal.crop.com': '10.0.0.1'
   'geosite:cn': https://doh.pub/dns-query
   'geosite:geolocation-!cn': [tls://8.8.4.4, https://1.0.0.1/dns-query]
-  'geosite:gfw':
-  - tls://8.8.4.4
-  - tls://1.0.0.1
   "www.baidu.com,+.google.cn": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
-  "geosite:cn,private,apple": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
+  "geosite:private,apple": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
 </code></pre>
 
 ### nameserver
