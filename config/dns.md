@@ -32,8 +32,8 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
   fallback:
-    - tcp://1.1.1.1
-    - 'tcp://1.1.1.1#
+    - tls://8.8.4.4
+    - tls://1.1.1.1
   proxy-server-nameserver:
     - https://doh.pub/dns-query
   fallback-filter:
@@ -146,18 +146,15 @@ default-nameserver:
 
 指定域名查询的解析服务器,可使用 geosite,优先于`nameserver/fallback 查询`
 
-可书写多个,并发查询,以下仅作为书写演示
+可书写多个,并发查询,以下仅作为书写演示,建议根据自己需求写
 
 <pre class="language-yaml"><code class="lang-yaml"><strong>nameserver-policy:
 </strong>  'www.baidu.com': '114.114.114.114'
   '+.internal.crop.com': '10.0.0.1'
   'geosite:cn': https://doh.pub/dns-query
-  'geosite:geolocation-!cn': [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
-  'geosite:gfw':
-  - tls://8.8.4.4
-  - tls://1.0.0.1
+  'geosite:geolocation-!cn': [tls://8.8.4.4, https://1.0.0.1/dns-query]
   "www.baidu.com,+.google.cn": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
-  "geosite:cn,private,apple": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
+  "geosite:private,apple": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
 </code></pre>
 
 ### nameserver
