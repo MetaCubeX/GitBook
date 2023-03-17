@@ -119,12 +119,13 @@ dns:
     
   # 指定域名使用自定义DNS解析, 可以使用 geosite 分流 DNS 解析。
   # 将国内域名指定为国内 DOH 进行解析，其余 DNS 使用在 nameserver 使用境外/无污染 DOH 解析
-  nameserver-policy:               
+  nameserver-policy:
+    #   'www.baidu.com': '114.114.114.114'
     #   '+.internal.crop.com': '10.0.0.1'
-    "geosite:cn":
+    geosite:cn,private,apple:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
-    "geosite:private": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
+    "www.baidu.com,+.google.cn": [223.5.5.5, https://dns.alidns.com/dns-query]
 
   enhanced-mode: redir-host          #DNS模式(redir-host/fake-ip)
                                      #【Meta专属】redir-host传递域名，可远程解析
