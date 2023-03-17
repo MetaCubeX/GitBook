@@ -235,3 +235,41 @@ fallback-filter:
       - '+.facebook.com'
       - '+.youtube.com'
 ```
+
+## 部分特殊写法
+
+此部分可用于所有的dns服务器
+
+### dns经过代理查询
+
+书写格式为dns服务器后 `#策略组或节点`
+
+书写规范应带引号,以防出现特殊字符,如需过代理查询,应配置`proxy-server-nameserver`,以防出现鸡蛋问题
+
+```yaml
+nameserver:
+  - 'tls://dns.google#proxy'
+```
+
+### 强制http/3
+
+强制gttp/3,与`perfer-h3`无关,强制开启doh的http/3支持,若不支持将无法使用
+
+```yaml
+nameserver:
+  - tls://dot.pub#h3=true
+```
+
+### 指定DNS出口网卡
+
+```yaml
+nameserver:
+  - 'tls://8.8.4.4#en0'
+```
+
+### 指定策略组和使用 http/3
+
+```
+nameserver:
+  - 'https://mozilla.cloudflare-dns.com/dns-query#proxy&h3=true'
+```
