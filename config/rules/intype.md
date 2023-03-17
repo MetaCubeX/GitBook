@@ -11,3 +11,7 @@ IN-TYPE,INNER,proxy
 ### 支持的类型
 
 HTTP/SOCKS/TUN/TPROXY/REDIR/INNER
+
+{% hint style="info" %}
+INNER 为providers的下载请求
+{% endhint %}
