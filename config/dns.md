@@ -157,6 +157,10 @@ default-nameserver:
   "geosite:private,apple": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
 </code></pre>
 
+{% hint style="info" %}
+`使用geosite时,应当使用引号包裹`
+{% endhint %}
+
 ### nameserver
 
 默认的域名解析服务器,如不配置 `fallback/proxy-server-nameserver` ,则所有域名都由nameserver解析
@@ -257,7 +261,7 @@ nameserver:
 
 ```yaml
 nameserver:
-  - tls://dot.pub#h3=true
+  - 'tls://dot.pub#h3=true'
 ```
 
 ### 指定DNS出口网卡
@@ -269,7 +273,7 @@ nameserver:
 
 ### 指定策略组和使用 http/3
 
-```
+```yaml
 nameserver:
   - 'https://mozilla.cloudflare-dns.com/dns-query#proxy&h3=true'
 ```
