@@ -152,7 +152,7 @@ secret: ""
 可以为绝对路径,或者clash工作目录的相对路径
 
 ```yaml
-external-ui: ./dashboard
+external-ui: dashboard
 ```
 
 ## 缓存
@@ -212,3 +212,45 @@ global-client-fingerprint: chrome
 1
 
 ## 实验性
+
+## 完整示例
+
+<pre class="language-yaml"><code class="lang-yaml"># port: 7890
+# socks-port: 7891
+mixed-port: 10801
+# redir-port: 7892
+# tproxy-port: 7893
+
+allow-lan: true
+bind-address: "*"
+find-process-mode: strict
+global-client-fingerprint: chrome
+# routing-mark:6666
+ipv6: true
+mode: rule
+log-level: debug
+# interface-name: en0
+external-controller: 0.0.0.0:9093
+external-controller-tls: 0.0.0.0:9443
+<strong># external-ui: dashboard
+</strong>
+geox-url:
+  geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
+  geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
+
+tls:
+  certificate: string # 证书 PEM 格式，或者 证书的路径
+  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
+  custom-certifactes:
+    - |
+      -----BEGIN CERTIFICATE-----
+      format/pem...
+      -----END CERTIFICATE-----
+
+experimental:
+
+profile:
+  store-selected: false
+  store-fake-ip: true
+</code></pre>
