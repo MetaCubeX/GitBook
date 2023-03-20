@@ -157,6 +157,10 @@ default-nameserver:
   "geosite:private,apple": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
 </code></pre>
 
+{% hint style="info" %}
+`使用geosite时,应当使用引号包裹`
+{% endhint %}
+
 ### nameserver
 
 默认的域名解析服务器,如不配置 `fallback/proxy-server-nameserver` ,则所有域名都由nameserver解析
