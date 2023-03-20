@@ -207,9 +207,16 @@ global-client-fingerprint: chrome
 可选："chrome","firefox","safari","ios","random","none"
 {% endhint %}
 
-## EBPF模块
+## 自定GEO下载地址
 
-1
+
+
+```yaml
+geox-url:
+  geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
+  geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
+```
 
 ## 实验性
 
