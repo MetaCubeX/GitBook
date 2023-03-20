@@ -261,7 +261,7 @@ nameserver:
 
 ```yaml
 nameserver:
-  - tls://dot.pub#h3=true
+  - 'tls://dot.pub#h3=true'
 ```
 
 ### 指定DNS出口网卡
@@ -273,7 +273,7 @@ nameserver:
 
 ### 指定策略组和使用 http/3
 
-```
+```yaml
 nameserver:
   - 'https://mozilla.cloudflare-dns.com/dns-query#proxy&h3=true'
 ```
