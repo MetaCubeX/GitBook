@@ -114,11 +114,11 @@ ipv6: true
 
 控制是否让clash去匹配进程
 
-`always`    开启,强制匹配所有进程
+`always` 开启,强制匹配所有进程
 
-`strict`     默认,由 clash 判断是否开启
+`strict` 默认,由 clash 判断是否开启
 
-`off`           不匹配进程,推荐在路由器上使用此模式
+`off` 不匹配进程,推荐在路由器上使用此模式
 
 ```yaml
 find-process-mode: strict
@@ -204,25 +204,26 @@ global-client-fingerprint: chrome
 ```
 
 {% hint style="info" %}
-可选："chrome","firefox","safari","ios","random","none"
+可选："chrome", "firefox", "safari", "ios", ,"android", "edge", "360"," qq", "random"
+
+若选择"random", 则按照真实世界数据按概率生成一个现代浏览器指纹。
 {% endhint %}
 
 ## 自定GEO下载地址
 
-
-
 ```yaml
 geox-url:
-  geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
-  geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
-  mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
 ```
 
 ## 实验性
 
 ## 完整示例
 
-<pre class="language-yaml"><code class="lang-yaml"># port: 7890
+```yaml
+# port: 7890
 # socks-port: 7891
 mixed-port: 10801
 # redir-port: 7892
@@ -239,8 +240,8 @@ log-level: debug
 # interface-name: en0
 external-controller: 0.0.0.0:9093
 external-controller-tls: 0.0.0.0:9443
-<strong># external-ui: dashboard
-</strong>
+# external-ui: dashboard
+
 geox-url:
   geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
   geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
@@ -260,4 +261,4 @@ experimental:
 profile:
   store-selected: false
   store-fake-ip: true
-</code></pre>
+```
