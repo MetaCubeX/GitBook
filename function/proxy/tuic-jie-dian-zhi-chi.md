@@ -1,6 +1,6 @@
 # Tuic 节点支持
 
-Meta增加了Hysteria协议支持，具体格式如下：
+Meta增加了Tuic协议支持，具体格式如下：
 
 ```yaml
 proxies:
