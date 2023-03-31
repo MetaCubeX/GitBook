@@ -24,7 +24,7 @@ Meta增加了Vless协议支持，具体格式如下：
     # skip-cert-verify: true
 ```
 
-<mark style="color:blue;">**VLESS-reality-vision**</mark>
+#### <mark style="color:blue;">**VLESS-reality-vision**</mark>
 
 <pre class="language-yaml"><code class="lang-yaml"><strong>- name: "vless-reality-vision"
 </strong>  type: vless
@@ -42,7 +42,7 @@ Meta增加了Vless协议支持，具体格式如下：
   client-fingerprint: chrome # cannot be empty
 </code></pre>
 
-<mark style="color:blue;">**vless-reality-grpc**</mark>
+#### <mark style="color:blue;">**VLESS-reality-grpc**</mark>
 
 ```
 - name: "vless-reality-grpc"
