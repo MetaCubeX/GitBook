@@ -12,6 +12,7 @@ proxies:
     ipv6: fd01:5ca1:ab1e:80fa:ab85:6eea:213f:f4a5
     private-key: eCtXsJZ27+4PbhDkHnB923tkUn2Gj59wZw5wFA75MnU=
     public-key: Cr8hWlKvtDt7nrvf+f0brNQQzabAqrjfBvas9pmowjo=
+    pre-shared-key: xxxx
     udp: true
     # reserved: 'U4An'
 ```
