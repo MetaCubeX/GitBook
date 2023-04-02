@@ -1,7 +1,5 @@
 # 懒人配置
 
-by [汐殇](http://localhost:5000/u/3eOHDxrQBnMwW5CB7DtVSHLFgKL2 "mention")
-
 ```yaml
 mixed-port: 7890
 unified-delay: false

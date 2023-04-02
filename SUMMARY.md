@@ -3,7 +3,7 @@
 * [简介](README.md)
 * [使用Meta的客户端](used/README.md)
   * [在线面板](used/zai-xian-mian-ban.md)
-* [完整配置示例](example/README.md)
+* [完整配置示例](example.md)
   * [懒人配置](example/lan-ren-pei-zhi.md)
 
 ## Meta特性 <a href="#function" id="function"></a>
