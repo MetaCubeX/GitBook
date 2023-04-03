@@ -170,7 +170,7 @@ rules:
   - GEOIP,twitter,Twitter
   - GEOSITE,CN,国内
   - GEOIP,CN,国内
-  - MATCH,其他ya
+  - MATCH,其他
 ```
 
 ***
