@@ -1,8 +1,11 @@
 # 懒人配置
 
-proxy-providers写订阅就能用了(理论上)
+proxy-providers写订阅就能用了(理论上),只需要改use和proxy-providers
 
 ```yaml
+p: &p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
+
+
 use: &use
   type: select
   use:
@@ -88,7 +91,6 @@ dns:
     - https://dns.alidns.com/dns-query
 
 proxies:
-p: &p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
 pr: &pr {type: select, proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]}
 
 proxy-groups:
