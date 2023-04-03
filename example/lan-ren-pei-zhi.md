@@ -57,14 +57,12 @@ dns:
   nameserver:
   - 'tls://8.8.4.4#dns'
   - 'tls://1.0.0.1#dns'
-  proxy-server-naneserver:
+  proxy-server-nameserver:
   - https://doh.pub/dns-query
   nameserver-policy:
     "geosite:cn,private":
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-  "+.atri.ink":
-    - https://doh.pub/dns-query
 
 proxies:
 p: &p
@@ -72,7 +70,7 @@ p: &p
 pr: &pr
   {type: select, proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]}
 
-u: &u
+use: &use
   type: select
   use:
   - provider1
@@ -126,19 +124,19 @@ proxy-groups:
   - {name: 其他, <<: *pr}
 
 #分隔，下面是地区分组
-  - {name: 香港, <<: *u,filter: "(?i)港|hk|hongkong|kong kong"}
+  - {name: 香港, <<: *use,filter: "(?i)港|hk|hongkong|kong kong"}
 
-  - {name: 台湾, <<: *u, filter: "(?i)台|tw|taiwan"}
+  - {name: 台湾, <<: *use, filter: "(?i)台|tw|taiwan"}
 
-  - {name: 日本, <<: *u, filter: "(?i)日本|jp|japan"}
+  - {name: 日本, <<: *use, filter: "(?i)日本|jp|japan"}
 
-  - {name: 美国, <<: *u, filter: "(?i)美|us|unitedstates|united states"}
+  - {name: 美国, <<: *use, filter: "(?i)美|us|unitedstates|united states"}
 
-  - {name: 新加坡, <<: *u, filter: "(?i)^(?!.*(?:us)).*(新|sg|singapore)"}
+  - {name: 新加坡, <<: *use, filter: "(?i)^(?!.*(?:us)).*(新|sg|singapore)"}
 
-  - {name: 其它地区, <<: *u, filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"}
+  - {name: 其它地区, <<: *use, filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"}
 
-  - {name: 全部节点, <<: *u}
+  - {name: 全部节点, <<: *use}
 
   - {name: 自动选择, proxies: [DIRECT], <<: *u, tolerance: 2, type: url-test}
 
