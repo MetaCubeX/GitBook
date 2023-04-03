@@ -1,6 +1,6 @@
 # 懒人配置
 
-proxy-providers写订阅就能用了(理论上),只需要改use和proxy-providers
+proxy-providers写订阅就能用了(理论上)
 
 ```yaml
 p: &p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
