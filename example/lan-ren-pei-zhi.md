@@ -145,7 +145,7 @@ proxy-groups:
 
   - {name: 全部节点, &#x3C;&#x3C;: *use}
 
-  - {name: 自动选择, proxies: [DIRECT], &#x3C;&#x3C;: *u, tolerance: 2, type: url-test}
+  - {name: 自动选择, proxies: [DIRECT], &#x3C;&#x3C;: *use, tolerance: 2, type: url-test}
 
 rules:
 
