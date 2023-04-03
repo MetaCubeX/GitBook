@@ -2,24 +2,25 @@
 
 proxy-providers写订阅就能用了(理论上)
 
-```yaml
-p: &p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
-
-
-use: &use
+<pre class="language-yaml"><code class="lang-yaml"><strong># 这里是订阅更新和延迟测试相关的
+</strong><strong>p: &#x26;p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
+</strong>
+# 这里写订阅名称
+use: &#x26;use
   type: select
   use:
   - provider1
   - provider2
 
+# 这里写订阅链接(url里),名称不能重复,path(文件位置)不能重复
 proxy-providers:
   provider1:
-    <<: *p
+    &#x3C;&#x3C;: *p
     url: ""
     path: ./proxy_providers/provider1.yaml
 
   provider2:
-    <<: *p
+    &#x3C;&#x3C;: *p
     url: ""
     path: ./proxy_providers/provider2.yaml
 
@@ -91,7 +92,7 @@ dns:
     - https://dns.alidns.com/dns-query
 
 proxies:
-pr: &pr {type: select, proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]}
+pr: &#x26;pr {type: select, proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]}
 
 proxy-groups:
 
@@ -99,52 +100,52 @@ proxy-groups:
 
   - {name: dns, type: select, proxies: [自动选择, DIRECT, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点]}
 
-  - {name: Google, <<: *pr}
+  - {name: Google, &#x3C;&#x3C;: *pr}
 
-  - {name: Telegram, <<: *pr}
+  - {name: Telegram, &#x3C;&#x3C;: *pr}
 
-  - {name: Twitter, <<: *pr}
+  - {name: Twitter, &#x3C;&#x3C;: *pr}
 
-  - {name: pixiv, <<: *pr}
+  - {name: pixiv, &#x3C;&#x3C;: *pr}
 
-  - {name: ehentai, <<: *pr}
+  - {name: ehentai, &#x3C;&#x3C;: *pr}
 
-  - {name: 哔哩哔哩, <<: *pr}
+  - {name: 哔哩哔哩, &#x3C;&#x3C;: *pr}
 
-  - {name: 哔哩哔哩api, <<: *pr}
+  - {name: 哔哩哔哩api, &#x3C;&#x3C;: *pr}
 
-  - {name: 哔哩东南亚, <<: *pr}
+  - {name: 哔哩东南亚, &#x3C;&#x3C;: *pr}
 
-  - {name: 巴哈姆特, <<: *pr}
+  - {name: 巴哈姆特, &#x3C;&#x3C;: *pr}
 
-  - {name: YouTube, <<: *pr}
+  - {name: YouTube, &#x3C;&#x3C;: *pr}
 
-  - {name: NETFLIX, <<: *pr}
+  - {name: NETFLIX, &#x3C;&#x3C;: *pr}
 
-  - {name: Spotify, <<: *pr}
+  - {name: Spotify, &#x3C;&#x3C;: *pr}
 
-  - {name: github, <<: *pr}
+  - {name: github, &#x3C;&#x3C;: *pr}
 
   - {name: 国内, type: select, proxies: [DIRECT, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}
 
-  - {name: 其他, <<: *pr}
+  - {name: 其他, &#x3C;&#x3C;: *pr}
 
 #分隔，下面是地区分组
-  - {name: 香港, <<: *use,filter: "(?i)港|hk|hongkong|kong kong"}
+  - {name: 香港, &#x3C;&#x3C;: *use,filter: "(?i)港|hk|hongkong|kong kong"}
 
-  - {name: 台湾, <<: *use, filter: "(?i)台|tw|taiwan"}
+  - {name: 台湾, &#x3C;&#x3C;: *use, filter: "(?i)台|tw|taiwan"}
 
-  - {name: 日本, <<: *use, filter: "(?i)日本|jp|japan"}
+  - {name: 日本, &#x3C;&#x3C;: *use, filter: "(?i)日本|jp|japan"}
 
-  - {name: 美国, <<: *use, filter: "(?i)美|us|unitedstates|united states"}
+  - {name: 美国, &#x3C;&#x3C;: *use, filter: "(?i)美|us|unitedstates|united states"}
 
-  - {name: 新加坡, <<: *use, filter: "(?i)^(?!.*(?:us)).*(新|sg|singapore)"}
+  - {name: 新加坡, &#x3C;&#x3C;: *use, filter: "(?i)^(?!.*(?:us)).*(新|sg|singapore)"}
 
-  - {name: 其它地区, <<: *use, filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"}
+  - {name: 其它地区, &#x3C;&#x3C;: *use, filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"}
 
-  - {name: 全部节点, <<: *use}
+  - {name: 全部节点, &#x3C;&#x3C;: *use}
 
-  - {name: 自动选择, proxies: [DIRECT], <<: *u, tolerance: 2, type: url-test}
+  - {name: 自动选择, proxies: [DIRECT], &#x3C;&#x3C;: *u, tolerance: 2, type: url-test}
 
 rules:
 
@@ -168,4 +169,4 @@ rules:
   - GEOSITE,CN,国内
   - GEOIP,CN,国内
   - MATCH,其他
-```
+</code></pre>
