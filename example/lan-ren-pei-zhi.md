@@ -2,12 +2,12 @@
 
 proxy-providers写订阅就能用了(理论上)
 
-
-###### 锚点 START ######
+```
+######### 锚点 start #######
 # proxy 相关
 pr: &#x26;pr {type: select, proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]}
 
-# 这里是订阅更新和延迟测试相关的
+#这里是订阅更新和延迟测试相关的
 p: &#x26;p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
 
 use: &#x26;use
@@ -15,7 +15,8 @@ use: &#x26;use
   use:
   - provider1
   - provider2
-###### 锚点 END ######
+  
+######### 锚点 end #######
 
 # url里填写自己的订阅,名称不能重复,path(文件位置)不能重复
 proxy-providers:
@@ -170,4 +171,6 @@ rules:
   - GEOSITE,CN,国内
   - GEOIP,CN,国内
   - MATCH,其他
-</code></pre>
+```
+
+****
