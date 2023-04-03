@@ -2,17 +2,23 @@
 
 proxy-providers写订阅就能用了(理论上)
 
-<pre class="language-yaml"><code class="lang-yaml"><strong># 这里是订阅更新和延迟测试相关的
-</strong><strong>p: &#x26;p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
-</strong>
-# 这里写订阅名称
+```
+######### 锚点 start #######
+# proxy 相关
+pr: &#x26;pr {type: select, proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]}
+
+#这里是订阅更新和延迟测试相关的
+p: &#x26;p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
+
 use: &#x26;use
   type: select
   use:
   - provider1
   - provider2
+  
+######### 锚点 end #######
 
-# 这里写订阅链接(url里),名称不能重复,path(文件位置)不能重复
+# url里填写自己的订阅,名称不能重复,path(文件位置)不能重复
 proxy-providers:
   provider1:
     &#x3C;&#x3C;: *p
@@ -23,10 +29,6 @@ proxy-providers:
     &#x3C;&#x3C;: *p
     url: ""
     path: ./proxy_providers/provider2.yaml
-
-
-
-
 
 mixed-port: 7890
 unified-delay: false
@@ -92,7 +94,7 @@ dns:
     - https://dns.alidns.com/dns-query
 
 proxies:
-pr: &#x26;pr {type: select, proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]}
+
 
 proxy-groups:
 
@@ -145,7 +147,7 @@ proxy-groups:
 
   - {name: 全部节点, &#x3C;&#x3C;: *use}
 
-  - {name: 自动选择, proxies: [DIRECT], &#x3C;&#x3C;: *u, tolerance: 2, type: url-test}
+  - {name: 自动选择, proxies: [DIRECT], &#x3C;&#x3C;: *use, tolerance: 2, type: url-test}
 
 rules:
 
@@ -169,4 +171,6 @@ rules:
   - GEOSITE,CN,国内
   - GEOIP,CN,国内
   - MATCH,其他
-</code></pre>
+```
+
+****
