@@ -97,7 +97,6 @@ proxy-providers:
     path: ./proxy_providers/provider1.yaml
 
   provider2:
-    type: http
     interval: 3600
     health-check:
       enable: true
