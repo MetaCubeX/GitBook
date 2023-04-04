@@ -52,7 +52,7 @@ enable: true
 
 ### stack
 
-tun模式堆栈,如无使用问题,建议使用 `system` 栈;MacOS 用户推荐 `gvisor`栈,IOS无法使用`systen`栈
+tun模式堆栈,如无使用问题,建议使用 `system` 栈;MacOS 用户推荐 `gvisor`栈,IOS无法使用`system`栈
 
 可选： `system/gvisor/lwip`
 
