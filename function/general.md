@@ -67,11 +67,11 @@ geox-url:
   mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
 ```
 
-**geodata-mode**：当为`true`时使用geoip.dat数据库，默认(可不写)为`false`,使用Country.mmdb数据库。（<mark style="color:red;">使用启动参数 -m 时，等同geodata-mode：true</mark>）
+**geodata-mode**：当为`true`时使用**geoip.dat**数据库，默认(可不写)为`false`,使用**Country.mmdb**数据库。（<mark style="color:red;">使用启动参数 -m 时，等同geodata-mode：true</mark>）
 
 {% hint style="info" %}
-* Meta使用 [**Loyalsoldier** ](https://github.com/Loyalsoldier/geoip)的 <mark style="color:blue;">\*\*\*\*</mark> <mark style="color:blue;">geoip</mark> 作为默认数据库，首次运行会自动下载对应数据库到clash主目录，受github.com访问现状的限制，建议自行下载到本地再运行Meta；
-* [**Country.mmdb下载**](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb) | [**geoip.dat下载**](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat)\*\*\*\*
+* Meta会按配置需要，使用 geosite 或 <mark style="color:blue;">geoip.dat</mark> 作为数据库，首次运行会自动下载对应数据库到clash主目录，受github.com访问现状的限制，建议自行下载到本地再运行Meta；
+* 你也可以使用Meta项目提供的[下载地址](https://github.com/MetaCubeX/meta-rules-dat)
 {% endhint %}
 
 ```yaml
