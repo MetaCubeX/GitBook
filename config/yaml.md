@@ -57,7 +57,9 @@ a:
 
 **&** 锚点和 **\*** 别名，可以用来引用,   **&** 用来建立锚点,**<<**表示合并到当前数据,**\*** 用来引用锚点
 
-示例,因为`p:`这个项在clash中不存在,所以在运行时会被忽视
+因`p:`这个项在clash中不存在,所以在运行时会被忽视
+
+如合并时有重复的项,则不会去合并
 
 ```
 p: &p
@@ -76,7 +78,7 @@ proxy-providers:
 
   provider2:
     <<: *p
-    url: ""
+    type: file
     path: ./proxy_providers/provider2.yaml
 ```
 
@@ -101,7 +103,7 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    url: ""
+    type: file
     path: ./proxy_providers/provider2.yaml
 ```
 
