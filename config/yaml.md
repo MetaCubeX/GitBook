@@ -1,5 +1,9 @@
 # 一般的 clash 语法
 
+{% hint style="info" %}
+yaml大小写敏感,使用缩进表示层级关系,缩进不允许使用tab,只允许空格,缩进的空格数不重要,只要相同层级的元素左对齐即可
+{% endhint %}
+
 ## 注释
 
 在 yaml 格式的文件中,以"#"作为注释开头,行尾为结尾,"#"必须在行头或者必须在前方有空格,否则不视为注释
@@ -10,18 +14,98 @@ socks-port: 7891
 # socks代理端口
 ```
 
+## 对象
+
+对象键值对使用冒号结构表示 **key: value,**冒号后面要加一个空格,使用缩进表示层级关系
+
+#### 单行
+
+```yaml
+tun: {enable: true, stack: system, auto-route: true, auto-detect-interface: true}
+```
+
+#### 多行
+
+```yaml
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+```
+
 ## 数组
 
-在 yaml 格式的文件中,数组十分常见,用于一个项内的多个值,以下为两种数组的书写格式
+以 - 开头的行表示构成一个数组,用于一个对象内的多个值
+
+#### 单行
 
 ```yaml
 a: [b, c, d]
-
-a:
-- b
-- c
-- d
 ```
+
+#### 多行
+
+```yaml
+a:
+  - b
+  - c
+  - d
+```
+
+## 引用
+
+**&** 锚点和 **\*** 别名，可以用来引用,   **&** 用来建立锚点,**<<**表示合并到当前数据,**\*** 用来引用锚点
+
+示例,因为`p:`这个项在clash中不存在,所以在运行时会被忽视
+
+```
+p: &p
+  type: http
+  interval: 3600
+  health-check:
+    enable: true
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+proxy-providers:
+  provider1:
+    <<: *p
+    url: ""
+    path: ./proxy_providers/provider1.yaml
+
+  provider2:
+    <<: *p
+    url: ""
+    path: ./proxy_providers/provider2.yaml
+```
+
+等同于
+
+```
+proxy-providers:
+  provider1:
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: ""
+    path: ./proxy_providers/provider1.yaml
+
+  provider2:
+    type: http
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    url: ""
+    path: ./proxy_providers/provider2.yaml
+```
+
+###
 
 ## IPV6地址
 
