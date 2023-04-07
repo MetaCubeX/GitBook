@@ -124,6 +124,7 @@ proxy-providers:
 clash的通配符 \* 一次只能匹配一级域名
 
 \*.baudu.com 只匹配 tieba.baidu.com 而不匹配 123.tieba.baidu.com 或者 baidu.com
+
 `'*'`只匹配localhost等域
 
 ### 通配符 +
