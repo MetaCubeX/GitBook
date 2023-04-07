@@ -124,6 +124,7 @@ proxy-providers:
 clash的通配符 \* 一次只能匹配一级域名
 
 \*.baudu.com 只匹配 tieba.baidu.com 而不匹配 123.tieba.baidu.com 或者 baidu.com
+`'*'`只匹配localhost等域
 
 ### 通配符 +
 
@@ -143,7 +144,7 @@ clash的通配符 \* 一次只能匹配一级域名
 
 ### 使用示例
 
-使用通配符时,应当使用引号`'' 或` `" "`将内容包裹起来，以免过度匹配
+使用通配符时,应当使用引号`''`或`" "`将内容包裹起来，以免过度匹配
 
 ```yaml
 fake-ip-filter:
